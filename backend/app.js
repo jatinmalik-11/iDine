@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
-const db = require('mongoose');
+const mongoose = require('mongoose');
 const crud = require('./crud');
-
+const schema = require('./schema');
 //db
 main()
 .then((res) => {
@@ -16,12 +16,22 @@ async function main() {
   // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
 
-app.get('/' , (req,res) => {
+app.get('/admin' , (req,res) => {
     console.log("Root is working");
     res.send("hello");
+    
 });
 
-app.use('/admin' , crud);
+//Schema
+const menuSchema = new mongoose.Schema({
+    picture: String,
+    name: String,
+    price: Number,
+    description: String
+});
+const Schema = mongoose.model('Schema', menuSchema);
+
+// app.use('/admin' , crud);
 // user
 // user/home
 // user/checkout
