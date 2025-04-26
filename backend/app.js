@@ -1,8 +1,12 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const axios  = require('axios');
+const cors = require('cors');
 const crud = require('./crud');
 const schema = require('./schema');
+const data = require('./database/database');
+
 //db
 main()
 .then((res) => {
@@ -12,24 +16,21 @@ main()
 .catch(err => console.log(err));
 async function main() {
   await mongoose.connect('mongodb://127.0.0.1:27017/iDine');
-
-  // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
 
-app.get('/admin' , (req,res) => {
-    console.log("Root is working");
-    res.send("hello");
-    
+app.use(cors());
+
+app.get('/admin' , async (req,res) => {
+    try{    
+    const response = await schema.find();
+    res.json(response);
+    }
+    catch(error){
+        console.log(error);
+        res.status(500).send("Internal Server Error"); // Send an error response if something goes wrong
+    }
 });
 
-//Schema
-const menuSchema = new mongoose.Schema({
-    picture: String,
-    name: String,
-    price: Number,
-    description: String
-});
-const Schema = mongoose.model('Schema', menuSchema);
 
 // app.use('/admin' , crud);
 // user
