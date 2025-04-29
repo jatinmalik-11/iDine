@@ -1,9 +1,11 @@
 import axios from 'axios'
 import {useState, useEffect} from 'react'
+import {useNavigate} from 'react-router-dom'
 
 function crud(){
     const [data, setData] = useState([]);
     const[loader, setLoader] = useState(true);
+    const navigate = useNavigate();
 
     useEffect(() => {
         axios.get('http://localhost:5000/admin')
@@ -22,6 +24,10 @@ function crud(){
         )
     }
 
+    function OnClickHandler(item) {
+        navigate('/admin/edit', { state: { item } });
+    }
+
     return(
         <>
         <h1>Hello i am crud</h1>
@@ -30,9 +36,14 @@ function crud(){
             <h1>Menu</h1>
             {data.map((items, index) => (
                     <div className="menu-items" key={index}>
-                        <ul>
+                        <ul style={{ listStyleType: "none" }}>
                             <li className="item-name">
                             <h3 className="name">{items.name}</h3>
+                            <h4 className="price">{items.price}</h4>
+                            <h5 className="description">{items.description}</h5>
+                            </li>
+                            <li className="edit-items">
+                                <button onClick={() => OnClickHandler(items)}>Edit</button>
                             </li>
                         </ul>
                     </div>
