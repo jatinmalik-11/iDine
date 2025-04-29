@@ -1,11 +1,14 @@
-import Landingpage from "../components/Landingpage"
+import Landingpage from "../components/LandingPage/LandingPage"
+import Navbar from '../components/Navbar/Navbar'
+import Menu from '../components/Menu/Menu'
 
 function Home(){
 
     return(
         <>
-        <h1>Hello I am home</h1>
+        <Navbar/>
         <Landingpage/>
+        <Menu/>
         </>
     )
 }
