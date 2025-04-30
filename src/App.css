@@ -2,4 +2,12 @@
 
 :root{
     font-family: "Montserrat", sans-serif;
+    background-color: black;
 }
+@theme {
+    --color-red: #8B0000;
+    --color-gold: #D4AF37;
+    --color-gray: #1A1A1A;
+    --color-white: #F5F5F5;
+    --color-tblack: #140903;
+  }

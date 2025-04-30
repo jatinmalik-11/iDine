@@ -1,10 +1,15 @@
 function Landingpage() {
     return (
         <>
-            <div className="relative h-screen w-full bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('https://i.postimg.cc/NjjVJ8bq/Chat-GPT-Image-Apr-29-2025-10-16-34-PM.png')" }}>
-         {/* Move navbar inside to overlay it */}
+            <div className="relative h-screen w-full bg-cover bg-center bg-no-repeat" style={{
+                    backgroundImage: "url('https://i.postimg.cc/Df1xRp6z/Chat-GPT-Image-Apr-30-2025-11-03-53-AM-5.png')",
+                }}>
+                <a href="#next-section" className="absolute bottom-5 right-10 text-gold text-xl font-extrabold flex items-center space-x-2">
+                    <span>Scroll Down</span>
+                    <span className="animate-bounce">⬇</span>
+                </a>
                 <div className="h-full w-full flex items-center justify-center">
-                    <h1 className="text-white text-5xl"></h1>
+
                 </div>
             </div>
         </>

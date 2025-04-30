@@ -1,7 +1,7 @@
 const data = [
     
         {
-          picture: "https://example.com/images/paneer-butter-masala.jpg",
+          picture: "https://i.postimg.cc/x1XLPdTB/360-F-824358731-z7-KIPdx-Hw-Nsr-N0i8o-Cue-Qpv-A91i1-SPXX.jpg",
           name: "Paneer Butter Masala",
           price: 320,
           description: "Soft paneer cubes in rich, buttery tomato gravy."
