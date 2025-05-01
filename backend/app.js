@@ -28,8 +28,7 @@ app.get('/admin' , async (req,res) => {
     }
     catch(error){
         console.log(error);
-        res.status(500).send("Internal Server Error"); // Send an error response if something goes wrong
-    }
+        res.status(500).send("Internal Server Error"); 
 });
 
 //Update
