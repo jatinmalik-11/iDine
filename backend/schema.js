@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const menuSchema = new mongoose.Schema({
-    picture: String,
+    image: String,
     name: String,
     price: Number,
     description: String

@@ -19,6 +19,7 @@ async function main() {
 }
 
 app.use(cors());
+app.use(express.json());
 
 app.get('/admin' , async (req,res) => {
     try{    
@@ -31,13 +32,20 @@ app.get('/admin' , async (req,res) => {
     }
 });
 
-
-// app.use('/admin' , crud);
-// user
-// user/home
-// user/checkout
-// admin
-// admin/menu
+//Update
+app.put('/admin/:id', async (req, res) => {
+    try {
+        const updatedItem = await schema.findByIdAndUpdate(
+            req.params.id,
+            req.body,
+            { new: true } // Return the updated document
+        );
+        res.json(updatedItem);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Error updating item");
+    }
+});
 
 
 app.listen(5000, () => {
