@@ -105,7 +105,7 @@ function Landingpage() {
                                     </div>
                                     <div className="flex items-center justify-between mt-4">
                                         <span className="text-2xl font-bold text-gold">₹{selectedItem.price}</span>
-                                        <button onclick = {OnClickHandler} className="bg-gradient-to-r from-gold to-red-600 text-black font-bold py-2 px-6 rounded-full hover:scale-105 transition-transform">
+                                        <button className="bg-gradient-to-r from-gold to-red-600 text-black font-bold py-2 px-6 rounded-full hover:scale-105 transition-transform">
                                             Order Now
                                         </button>
                                     </div>
